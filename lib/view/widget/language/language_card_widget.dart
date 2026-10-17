@@ -29,10 +29,10 @@ class LanguageCard extends StatelessWidget {
         duration: const Duration(milliseconds: 220),
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xFFF0EDFF) : Colors.white,
+          color: isSelected ? AppColor.backgroundimage : AppColor.white,
           borderRadius: BorderRadius.circular(22),
           border: Border.all(
-            color: isSelected ? AppColor.primary : const Color(0xFFEAE8F5),
+            color: isSelected ? AppColor.primary : AppColor.skipcolor,
             width: isSelected ? 1.8 : 1.2,
           ),
         ),
@@ -55,10 +55,7 @@ class LanguageCard extends StatelessWidget {
                   const SizedBox(height: 5),
                   Text(
                     subtitle,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Color(0xFF85839F),
-                    ),
+                    style: const TextStyle(fontSize: 14, color: AppColor.hint),
                   ),
                 ],
               ),
@@ -67,7 +64,7 @@ class LanguageCard extends StatelessWidget {
               isSelected
                   ? Icons.radio_button_checked_rounded
                   : Icons.radio_button_off_rounded,
-              color: isSelected ? AppColor.primary : const Color(0xFFB7B4CC),
+              color: isSelected ? AppColor.primary : AppColor.secondary,
               size: 25,
             ),
           ],

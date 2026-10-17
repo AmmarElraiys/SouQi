@@ -39,7 +39,6 @@ class Language extends StatelessWidget {
                             const SizedBox(height: 30),
                             const LanguageIllustration(),
                             const SizedBox(height: 32),
-
                             LanguageCard(
                               controller: controller,
                               code: 'ar',
@@ -47,9 +46,7 @@ class Language extends StatelessWidget {
                               title: 'العربية',
                               subtitle: 'Arabic',
                             ),
-
                             const SizedBox(height: 16),
-
                             LanguageCard(
                               controller: controller,
                               code: 'en',
@@ -57,12 +54,9 @@ class Language extends StatelessWidget {
                               title: 'الإنجليزية',
                               subtitle: 'English',
                             ),
-
                             const Spacer(),
                             const SizedBox(height: 35),
-
                             LanguageButton(controller: controller),
-
                             const SizedBox(height: 12),
                           ],
                         ),
