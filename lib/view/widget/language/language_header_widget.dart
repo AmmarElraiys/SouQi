@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/core/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/utils.dart';
 
 class LanguageHeader extends StatelessWidget {
   const LanguageHeader({super.key});
@@ -25,8 +26,8 @@ class LanguageHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 30),
-        const Text(
-          'اختر لغتك المفضلة',
+        Text(
+          '1'.tr,
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 26,
@@ -35,8 +36,8 @@ class LanguageHeader extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 12),
-        const Text(
-          'اختر اللغة التي تناسبك لمتابعة التسوق',
+        Text(
+          '2'.tr,
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 15, height: 1.7, color: Color(0xFF85839F)),
         ),

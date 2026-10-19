@@ -1,5 +1,7 @@
-import 'package:ecommerce_app/controller/language/language_controller.dart';
+// import 'package:ecommerce_app/controller/language/language_controller.dart';
+import 'package:ecommerce_app/core/constant/approutes.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
+import 'package:ecommerce_app/core/localization/changelocal.dart';
 import 'package:ecommerce_app/view/widget/language/language_button_widget.dart';
 import 'package:ecommerce_app/view/widget/language/language_card_widget.dart';
 import 'package:ecommerce_app/view/widget/language/language_header_widget.dart';
@@ -12,8 +14,7 @@ class Language extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<LanguageController>(
-      init: LanguageController(),
+    return GetBuilder<LocalController>(
       builder: (controller) {
         return Scaffold(
           backgroundColor: AppColor.skipcolor,
@@ -22,15 +23,18 @@ class Language extends StatelessWidget {
               textDirection: TextDirection.rtl,
               child: LayoutBuilder(
                 builder: (context, constraints) {
+                  final minHeight = (constraints.maxHeight - 40).clamp(
+                    0.0,
+                    double.infinity,
+                  );
+
                   return SingleChildScrollView(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 24,
                       vertical: 20,
                     ),
                     child: ConstrainedBox(
-                      constraints: BoxConstraints(
-                        minHeight: constraints.maxHeight - 40,
-                      ),
+                      constraints: BoxConstraints(minHeight: minHeight),
                       child: IntrinsicHeight(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -40,7 +44,9 @@ class Language extends StatelessWidget {
                             const LanguageIllustration(),
                             const SizedBox(height: 32),
                             LanguageCard(
-                              controller: controller,
+                              onTap: () {
+                                controller.changeLang("ar");
+                              },
                               code: 'ar',
                               flag: '🇸🇦',
                               title: 'العربية',
@@ -48,7 +54,9 @@ class Language extends StatelessWidget {
                             ),
                             const SizedBox(height: 16),
                             LanguageCard(
-                              controller: controller,
+                              onTap: () {
+                                controller.changeLang("en");
+                              },
                               code: 'en',
                               flag: '🇬🇧',
                               title: 'الإنجليزية',
@@ -56,7 +64,12 @@ class Language extends StatelessWidget {
                             ),
                             const Spacer(),
                             const SizedBox(height: 35),
-                            LanguageButton(controller: controller),
+                            LanguageButton(
+                              onPressed: () {
+                                controller.confirmLanguage();
+                                Get.offNamed(AppRoutes.onBoarding);
+                              },
+                            ),
                             const SizedBox(height: 12),
                           ],
                         ),

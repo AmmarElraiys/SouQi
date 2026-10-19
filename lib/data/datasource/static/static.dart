@@ -1,29 +1,27 @@
 import 'package:ecommerce_app/core/constant/imageasset.dart';
 import 'package:ecommerce_app/data/model/onboardingmodel.dart';
+import 'package:get/utils.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-    title: 'Choose Products',
+    title: '4'.tr,
     image: AppImageAsset.onBoardingOne,
-    body:
-        'Browse and select from a wide range of products available in our store.',
+    body: '5'.tr,
   ),
   OnBoardingModel(
-    title: 'Easy And Safe Payment',
+    title: '6'.tr,
     image: AppImageAsset.onBoardingTwo,
-    body: 'Make secure payments with our\n easy-to-use payment options.',
+    body: '7'.tr,
   ),
 
   OnBoardingModel(
-    title: 'Track Your Orders',
+    title: '8'.tr,
     image: AppImageAsset.onBoardingThree,
-    body:
-        'Monitor the status of your orders at any time during the delivery process.',
+    body: '9'.tr,
   ),
   OnBoardingModel(
-    title: 'Exclusive Discounts',
+    title: '10'.tr,
     image: AppImageAsset.onBoardingFour,
-    body:
-        'Take advantage of our exclusive discounts and sales events. Save money while shopping for your favorite products.',
+    body: '11'.tr,
   ),
 ];
