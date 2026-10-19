@@ -9,7 +9,7 @@ class LanguageIllustration extends StatelessWidget {
     return Container(
       height: 175,
       decoration: BoxDecoration(
-        color: const Color(0xFFECE9FF),
+        color: AppColor.secondary,
         borderRadius: BorderRadius.circular(32),
       ),
       child: Stack(

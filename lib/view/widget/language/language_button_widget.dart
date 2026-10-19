@@ -1,11 +1,11 @@
-import 'package:ecommerce_app/controller/language/language_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/utils.dart';
 
 class LanguageButton extends StatelessWidget {
-  final LanguageController controller;
+  final void Function()? onPressed;
 
-  const LanguageButton({super.key, required this.controller});
+  const LanguageButton({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class LanguageButton extends StatelessWidget {
       height: 58,
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: controller.confirmLanguage,
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColor.primary,
           foregroundColor: Colors.white,
@@ -22,11 +22,11 @@ class LanguageButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(18),
           ),
         ),
-        child: const Row(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'التالي',
+              '3'.tr,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(width: 10),
