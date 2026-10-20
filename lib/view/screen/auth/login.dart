@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/controller/login_controller.dart';
+import 'package:ecommerce_app/core/constant/approutes.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_body_widget.dart';
@@ -38,15 +39,11 @@ class Login extends StatelessWidget {
                         children: [
                           Center(child: CustomLogoShoppingBagWidget()),
                           const SizedBox(height: 22),
-                          const CustomTextBodyWidget(text: 'أهلاً بك في سوقي'),
+                          CustomTextBodyWidget(text: '12'.tr),
                           const SizedBox(height: 10),
-                          const CustomTextWidget(
-                            title: 'سجّل دخولك واكتشف تجربة تسوّق مميزة',
-                          ),
+                          CustomTextWidget(title: '13'.tr),
                           const SizedBox(height: 36),
-                          const CustomTextEmailPasswordWidget(
-                            title: 'البريد الإلكتروني',
-                          ),
+                          CustomTextEmailPasswordWidget(title: '14'.tr),
                           const SizedBox(height: 10),
                           CustomTextFormFieldWidget(
                             hinttext: 'example@email.com',
@@ -54,12 +51,10 @@ class Login extends StatelessWidget {
                             controller: controller.emailController,
                           ),
                           const SizedBox(height: 22),
-                          const CustomTextEmailPasswordWidget(
-                            title: 'كلمة المرور',
-                          ),
+                          CustomTextEmailPasswordWidget(title: '15'.tr),
                           const SizedBox(height: 10),
                           CustomTextFormFieldWidget(
-                            hinttext: 'أدخل كلمة المرور',
+                            hinttext: '16'.tr,
                             icon: Icons.lock_outline_rounded,
                             controller: controller.passwordController,
                           ),
@@ -68,7 +63,7 @@ class Login extends StatelessWidget {
                             alignment: Alignment.centerLeft,
 
                             child: CustomTextButtonWidget(
-                              title: 'نسيت كلمة المرور؟',
+                              title: '17'.tr,
                               onPressed: () {},
                             ),
                           ),
@@ -76,7 +71,7 @@ class Login extends StatelessWidget {
                           SizedBox(
                             height: 56,
                             child: CustomButtonWidget(
-                              title: 'تسجيل الدخول',
+                              title: '18'.tr,
                               onPressed: controller.login,
                             ),
                           ),
@@ -84,13 +79,15 @@ class Login extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text(
-                                'ليس لديك حساب؟ ',
+                              Text(
+                                '19'.tr,
                                 style: TextStyle(color: Colors.black54),
                               ),
                               CustomTextButtonWidget(
-                                title: 'أنشئ حساباً',
-                                onPressed: () {},
+                                title: '20'.tr,
+                                onPressed: () {
+                                  Get.toNamed(AppRoutes.signup);
+                                },
                               ),
                             ],
                           ),
