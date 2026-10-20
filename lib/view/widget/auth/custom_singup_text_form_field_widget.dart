@@ -6,6 +6,7 @@ class CustomSignupTextFormFieldWidget extends StatelessWidget {
   final String hint;
   final IconData icon;
   final bool obscureText;
+  final TextEditingController? controller;
   final TextInputType keyboardType;
   const CustomSignupTextFormFieldWidget({
     super.key,
@@ -14,6 +15,7 @@ class CustomSignupTextFormFieldWidget extends StatelessWidget {
     required this.icon,
     required this.obscureText,
     required this.keyboardType,
+    required this.controller,
   });
 
   @override

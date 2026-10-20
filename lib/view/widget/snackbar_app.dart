@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 class SnackbarApp {
   static void showWelcome() {
     Get.snackbar(
-      'أهلًا بك في سوقي!',
-      'سجّل الدخول الآن للاستمتاع بتجربة تسوق مميزة.',
+      '36'.tr,
+      '37'.tr,
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: AppColor.white,
       colorText: AppColor.black,

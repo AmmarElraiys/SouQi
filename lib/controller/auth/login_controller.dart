@@ -1,0 +1,72 @@
+import 'package:ecommerce_app/core/constant/approutes.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+abstract class LoginController extends GetxController {
+  // ignore: strict_top_level_inference
+  login();
+  // ignore: strict_top_level_inference
+  goToSignup();
+}
+
+class LoginControllerImp extends LoginController {
+  final formKey = GlobalKey<FormState>();
+  late TextEditingController email;
+  late TextEditingController password;
+  @override
+  login() {
+    if (formKey.currentState!.validate()) {
+      Get.snackbar('سوقي', 'تم التحقق من البيانات بنجاح');
+
+      // أضف عملية تسجيل الدخول الفعلية هنا.
+    }
+  }
+
+  @override
+  goToSignup() {
+    Get.toNamed(AppRoutes.signup);
+  }
+
+  @override
+  void onInit() {
+    email = TextEditingController();
+    password = TextEditingController();
+    super.onInit();
+  }
+
+  @override
+  void dispose() {
+    email.dispose();
+    password.dispose();
+    super.dispose();
+  }
+}
+
+// class LoginController extends GetxController {
+//   final formKey = GlobalKey<FormState>();
+
+//   final emailController = TextEditingController();
+//   final passwordController = TextEditingController();
+
+//   bool obscurePassword = true;
+
+//   void togglePasswordVisibility() {
+//     obscurePassword = !obscurePassword;
+//     update();
+//   }
+
+//   void login() {
+//     if (formKey.currentState!.validate()) {
+//       Get.snackbar('سوقي', 'تم التحقق من البيانات بنجاح');
+
+//       // أضف عملية تسجيل الدخول الفعلية هنا.
+//     }
+//   }
+
+//   @override
+//   void onClose() {
+//     emailController.dispose();
+//     passwordController.dispose();
+//     super.onClose();
+//   }
+// }

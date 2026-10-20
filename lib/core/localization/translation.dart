@@ -37,6 +37,10 @@ class MyTranslation extends Translations {
       "31": "السابق",
       "32": 'ابدأ الآن',
       "33": 'التالي',
+      "34": "الهاتف",
+      "35": "أدخل رقم هاتفك",
+      "36": "أهلًا بك في سوقي!",
+      "37": "سجّل الدخول الآن للاستمتاع بتجربة تسوق مميزة.",
     },
     'en': {
       "1": "Choose your preferred language",
@@ -62,7 +66,7 @@ class MyTranslation extends Translations {
       "19": "Don't have an account?",
       "20": "Create an Account",
       "21": "Create Your Souqi Account",
-      "22": "Join us and enjoy an easy and enjoyable shopping experience",
+      "22": "Join us and enjoy an easy and enjoyable\n shopping experience",
       "23": "Full Name",
       "24": "Enter your full name",
       "25": "Create a strong password",
@@ -74,6 +78,10 @@ class MyTranslation extends Translations {
       "31": "Previous",
       "32": "Get Started",
       "33": "Next",
+      "34": "Phone",
+      "35": "Enter your phone number",
+      "36": "Welcome to Souqi!",
+      "37": "Sign in now to enjoy a great shopping experience.",
     },
   };
 }
