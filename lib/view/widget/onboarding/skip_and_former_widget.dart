@@ -10,7 +10,7 @@ class SkipAndFormerWidget extends GetView<OnBoardingControllerImp> {
     return GetBuilder<OnBoardingControllerImp>(
       builder: (controller) {
         return SizedBox(
-          width: 75,
+          width: 80,
           child: TextButton(
             onPressed: () {
               if (controller.currentPage == 0) {
@@ -20,7 +20,7 @@ class SkipAndFormerWidget extends GetView<OnBoardingControllerImp> {
               }
             },
             child: Text(
-              controller.currentPage == 0 ? 'تخطي' : 'السابق',
+              controller.currentPage == 0 ? '30'.tr : '31'.tr,
               style: const TextStyle(
                 color: Color(0xFF555B70),
                 fontWeight: FontWeight.w600,

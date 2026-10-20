@@ -29,7 +29,7 @@ class OnBoarding extends StatelessWidget {
                   const SizedBox(width: 8),
                   TextSouqiWidget(text: 'SouQi'),
                   const Spacer(),
-                  SkipTextbuttonTwoWidget(text: 'تخطي'),
+                  SkipTextbuttonTwoWidget(text: '30'.tr),
                 ],
               ),
             ),

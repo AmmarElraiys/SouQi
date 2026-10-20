@@ -32,8 +32,8 @@ class ButtonOnboardingWidget extends GetView<OnBoardingControllerImp> {
                 children: [
                   Text(
                     controller.currentPage == onBoardingList.length - 1
-                        ? 'ابدأ الآن'
-                        : 'التالي',
+                        ? '32'.tr
+                        : '33'.tr,
                     style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
