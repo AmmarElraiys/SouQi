@@ -41,6 +41,17 @@ class MyTranslation extends Translations {
       "35": "أدخل رقم هاتفك",
       "36": "أهلًا بك في سوقي!",
       "37": "سجّل الدخول الآن للاستمتاع بتجربة تسوق مميزة.",
+      "38": 'استعادة كلمة المرور',
+      "39": 'لا تقلق! أدخل بريدك الإلكتروني وسنساعدك على استعادة حسابك.',
+      "40": 'إرسال رابط الاستعادة',
+      "41": 'العودة إلى تسجيل الدخول',
+      "42": 'أضف عملية التحقق من الرمز أولاً',
+      "43":
+          'أدخل رمز التحقق الذي أرسلناه إلى بريدك الإلكتروني '
+          'للمتابعة واستعادة كلمة المرور.\n',
+      "44": 'تأكيد الرمز',
+      "45": 'لم يصلك الرمز؟ إعادة الإرسال',
+      "46": 'التحقق من الرمز',
     },
     'en': {
       "1": "Choose your preferred language",
@@ -82,6 +93,17 @@ class MyTranslation extends Translations {
       "35": "Enter your phone number",
       "36": "Welcome to Souqi!",
       "37": "Sign in now to enjoy a great shopping experience.",
+      "38": "Reset Password",
+      "39":
+          "Don't worry! Enter your email address and we'll help you recover your account.",
+      "40": "Send Reset Link",
+      "41": "Back to Sign In",
+      "42": "Please implement the code verification first.",
+      "43":
+          "Enter the verification code we sent to your email to continue resetting your password.\n",
+      "44": "Verify Code",
+      "45": "Didn't receive the code? Resend",
+      "46": "Code Verification",
     },
   };
 }
