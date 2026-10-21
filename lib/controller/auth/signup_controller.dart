@@ -18,7 +18,6 @@ class SignupControllerImp extends SignupController {
   @override
   goToSignIn() {
     Get.back();
-    throw UnimplementedError();
   }
 
   @override

@@ -58,7 +58,9 @@ class Login extends StatelessWidget {
 
                         child: CustomTextButtonWidget(
                           title: '17'.tr,
-                          onPressed: () {},
+                          onPressed: () {
+                            controller.goToForgetPass();
+                          },
                         ),
                       ),
                       const SizedBox(height: 18),

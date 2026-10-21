@@ -7,6 +7,7 @@ abstract class LoginController extends GetxController {
   login();
   // ignore: strict_top_level_inference
   goToSignup();
+  goToForgetPass();
 }
 
 class LoginControllerImp extends LoginController {
@@ -39,6 +40,11 @@ class LoginControllerImp extends LoginController {
     email.dispose();
     password.dispose();
     super.dispose();
+  }
+
+  @override
+  goToForgetPass() {
+    Get.toNamed(AppRoutes.forgetpass);
   }
 }
 
