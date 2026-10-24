@@ -2,14 +2,14 @@ import 'package:ecommerce_app/core/constant/approutes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-abstract class LoginController extends GetxController {
+abstract class ResetpasswordController extends GetxController {
   // ignore: strict_top_level_inference
   resetPassword();
   // ignore: strict_top_level_inference
   goToSuccessResetPassword();
 }
 
-class LoginControllerImp extends LoginController {
+class ResetpasswordControllerImp extends ResetpasswordController {
   final formKey = GlobalKey<FormState>();
   late TextEditingController password;
   late TextEditingController refpassword;

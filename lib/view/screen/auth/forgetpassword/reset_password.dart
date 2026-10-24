@@ -1,16 +1,21 @@
+import 'package:ecommerce_app/controller/auth/resetpassword_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_button_widget.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_logo_forgetpass_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_logo_forgetpass_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_singup_text_form_field_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_body_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ResetPassword extends StatelessWidget {
   const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
+    ResetpasswordControllerImp controller = Get.put(
+      ResetpasswordControllerImp(),
+    );
     return Scaffold(
       backgroundColor: AppColor.backgroundcolor,
       body: SafeArea(
@@ -32,17 +37,14 @@ class ResetPassword extends StatelessWidget {
                       ),
 
                       const SizedBox(height: 28),
-                      CustomTextBodyWidget(text: 'إنشاء كلمة مرور جديدة'),
+                      CustomTextBodyWidget(text: '56'.tr),
                       const SizedBox(height: 12),
-                      CustomTextWidget(
-                        title:
-                            'اختر كلمة مرور قوية لحماية حسابك، ثم أكدها للمتابعة.',
-                      ),
+                      CustomTextWidget(title: '57'.tr),
 
                       const SizedBox(height: 32),
                       CustomSignupTextFormFieldWidget(
-                        label: 'كلمة المرور الجديدة',
-                        hint: 'أنشئ كلمة مرور قوية',
+                        label: '58'.tr,
+                        hint: '59'.tr,
                         icon: Icons.lock_outline_rounded,
                         obscureText: true,
                         keyboardType: TextInputType.text,
@@ -50,8 +52,8 @@ class ResetPassword extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       CustomSignupTextFormFieldWidget(
-                        label: 'تأكيد كلمة المرور',
-                        hint: 'أعد إدخال كلمة المرور',
+                        label: '26'.tr,
+                        hint: '27'.tr,
                         icon: Icons.lock_outline_rounded,
                         obscureText: true,
                         keyboardType: TextInputType.text,
@@ -61,8 +63,10 @@ class ResetPassword extends StatelessWidget {
                       SizedBox(
                         height: 54,
                         child: CustomButtonWidget(
-                          title: 'حفظ كلمة المرور',
-                          onPressed: () {},
+                          title: '60'.tr,
+                          onPressed: () {
+                            controller.goToSuccessResetPassword();
+                          },
                         ),
                       ),
                     ],

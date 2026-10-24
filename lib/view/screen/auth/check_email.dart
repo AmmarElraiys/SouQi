@@ -1,21 +1,18 @@
-import 'package:ecommerce_app/controller/auth/forgetpassword_controller.dart';
+import 'package:ecommerce_app/controller/auth/check_email_Controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_button_widget.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_logo_forgetpass_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_logo_forgetpass_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_singup_text_form_field_widget.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_text_button_widget.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_text_forgerpass_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_text_forgerpass_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+class CheckEmail extends StatelessWidget {
+  const CheckEmail({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ForgetpasswordControllerImp controler = Get.put(
-      ForgetpasswordControllerImp(),
-    );
+    CheckEmailConrtollerImp controler = Get.put(CheckEmailConrtollerImp());
     return Scaffold(
       backgroundColor: AppColor.backgroundcolor,
       body: SafeArea(
@@ -30,12 +27,14 @@ class ForgetPassword extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const SizedBox(height: 100),
-                    CustomLogoForgetpassWidget(icon: Icons.lock_reset_rounded),
+                    const CustomLogoForgetpassWidget(
+                      icon: Icons.mark_email_read_outlined,
+                    ),
                     const SizedBox(height: 30),
-                    CustomTextForgerpassWidget(title: '38'.tr),
+                    CustomTextForgerpassWidget(title: '47'.tr),
                     const SizedBox(height: 14),
                     Text(
-                      '39'.tr,
+                      '48'.tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
@@ -50,20 +49,25 @@ class ForgetPassword extends StatelessWidget {
                       icon: Icons.email_outlined,
                       keyboardType: TextInputType.emailAddress,
                       obscureText: false,
-                      controller: null,
+                      controller: controler.email, // تم ربطه بالكونترولر
                     ),
                     const SizedBox(height: 28),
                     SizedBox(
                       height: 56,
                       child: CustomButtonWidget(
-                        title: '40'.tr,
+                        title: '49'.tr,
                         onPressed: () {
-                          controler.goToverfiycode();
+                          controler.goToVerifyCodeSignUp();
                         },
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    CustomTextButtonWidget(title: '41'.tr, onPressed: () {}),
+                    // const SizedBox(height: 20),
+                    // CustomTextButtonWidget(
+                    //   title: 'العودة لتسجيل الدخول',
+                    //   onPressed: () {
+                    //     Get.back();
+                    //   },
+                    // ),
                   ],
                 ),
               ),

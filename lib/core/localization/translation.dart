@@ -52,6 +52,25 @@ class MyTranslation extends Translations {
       "44": 'تأكيد الرمز',
       "45": 'لم يصلك الرمز؟ إعادة الإرسال',
       "46": 'التحقق من الرمز',
+      "47": 'التحقق من البريد الإلكتروني',
+      "48": 'أدخل بريدك الإلكتروني لمتابعة إنشاء حسابك في سوقي.',
+      "49": 'إرسال',
+      "50": 'تم إنشاء حسابك بنجاح!',
+      "51":
+          'مرحبًا بك في سوقي! أصبح حسابك جاهزًا. '
+          'سجّل الدخول الآن وابدأ اكتشاف منتجاتك المفضلة.',
+      "52": 'الانتقال إلى تسجيل الدخول',
+      "53": 'تم تغيير كلمة المرور بنجاح!',
+      "54":
+          'تم تحديث كلمة المرور الخاصة بك بنجاح. '
+          'يمكنك الآن تسجيل الدخول باستخدام كلمة المرور الجديدة.',
+      "55": 'العودة إلى تسجيل الدخول',
+      "56": 'إنشاء كلمة مرور جديدة',
+      "57": 'اختر كلمة مرور قوية لحماية حسابك، ثم أكدها للمتابعة.',
+      "58": 'كلمة المرور الجديدة',
+      "59": 'أنشئ كلمة مرور قوية',
+      "60": 'حفظ كلمة المرور',
+      "61": 'أدخل رمز التحقق الذي أرسلناه إلى بريدك الإلكتروني ',
     },
     'en': {
       "1": "Choose your preferred language",
@@ -104,6 +123,24 @@ class MyTranslation extends Translations {
       "44": "Verify Code",
       "45": "Didn't receive the code? Resend",
       "46": "Code Verification",
+      "47": "Verify Your Email",
+      "48": "Enter your email address to continue creating your Souqi account.",
+      "49": "Continue Sign Up",
+      "50": "Your Account Has Been Created Successfully!",
+      "51":
+          "Welcome to Souqi! Your account is ready. Sign in now and start discovering your favorite products.",
+      "52": "Go to Sign In",
+      "53": "Password Changed Successfully!",
+      "54":
+          "Your password has been updated successfully. You can now sign in using your new password.",
+      "55": "Back to Sign In",
+      "56": "Create a New Password",
+      "57":
+          "Choose a strong password to protect your account, then confirm it to continue.",
+      "58": "New Password",
+      "59": "Create a strong password",
+      "60": "Save Password",
+      "61": "Enter the verification code we sent to your email.",
     },
   };
 }

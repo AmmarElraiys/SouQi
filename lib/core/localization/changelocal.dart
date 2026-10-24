@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constant/apptheme.dart';
 import 'package:ecommerce_app/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,7 @@ class LocalController extends GetxController {
   final MyServices myServices = Get.find<MyServices>();
 
   String selectedLanguage = 'ar';
-
+  ThemeData appTheme = themeEnglish;
   Locale get language => Locale(selectedLanguage);
 
   @override
@@ -17,9 +18,10 @@ class LocalController extends GetxController {
 
     if (savedLanguage == 'ar' || savedLanguage == 'en') {
       selectedLanguage = savedLanguage!;
+      appTheme = themeEnglish;
     } else {
       final deviceLanguage = Get.deviceLocale?.languageCode ?? 'ar';
-
+      appTheme = themeEnglish;
       selectedLanguage = deviceLanguage == 'en' ? 'en' : 'ar';
     }
   }
@@ -39,7 +41,8 @@ class LocalController extends GetxController {
     selectedLanguage = languageCode;
 
     await myServices.sharedPreferences.setString('lang', languageCode);
-
+    appTheme = languageCode == "ar" ? themeArabic : themeEnglish;
+    Get.changeTheme(appTheme);
     Get.updateLocale(Locale(languageCode));
     update();
   }
