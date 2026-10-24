@@ -25,22 +25,7 @@ class MyApp extends StatelessWidget {
       locale: controller.language,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        textTheme: TextTheme(
-          headlineSmall: const TextStyle(
-            fontSize: 27,
-            fontWeight: FontWeight.w800,
-            height: 1.5,
-            color: AppColor.titlecolor,
-          ),
-          bodySmall: const TextStyle(
-            fontSize: 18,
-            height: 1.9,
-            color: AppColor.bodycolor, // استخدم اللون من AppColor
-          ),
-        ),
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: controller.appTheme,
       home: Language(),
       routes: routes,
     );

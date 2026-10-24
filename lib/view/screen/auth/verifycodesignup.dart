@@ -1,7 +1,7 @@
-import 'package:ecommerce_app/controller/auth/verifycode_controller.dart';
+import 'package:ecommerce_app/controller/auth/verifycodesignup_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_button_widget.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_logo_forgetpass_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_logo_forgetpass_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_body_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_form_field_verifycode_widget.dart';
@@ -10,12 +10,12 @@ import 'package:ecommerce_app/view/widget/snackbar_app_verifycode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Verifycode extends StatelessWidget {
-  const Verifycode({super.key});
+class VerifycodeSignUp extends StatelessWidget {
+  const VerifycodeSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeControllerImp controller = VerifyCodeControllerImp();
+    VerifyCodeSignUpControllerImp controller = VerifyCodeSignUpControllerImp();
     return Scaffold(
       backgroundColor: AppColor.backgroundcolor,
       body: SafeArea(
@@ -35,7 +35,7 @@ class Verifycode extends StatelessWidget {
                     const SizedBox(height: 28),
                     CustomTextBodyWidget(text: '46'.tr),
                     const SizedBox(height: 12),
-                    CustomTextWidget(title: '43'.tr),
+                    CustomTextWidget(title: '61'.tr),
                     const SizedBox(height: 32),
                     const CustomTextFormFieldVerifycodeWidget(),
                     const SizedBox(height: 24),
@@ -45,7 +45,7 @@ class Verifycode extends StatelessWidget {
                         title: '44'.tr,
                         onPressed: () {
                           SnackbarAppVerifycodeWidget.showWelcome();
-                          controller.goToResetPassword();
+                          controller.goToSuccessSignup();
                         },
                       ),
                     ),

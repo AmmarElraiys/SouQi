@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/controller/auth/signup_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_button_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_body_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_widget.dart';
@@ -94,7 +94,9 @@ class Signup extends StatelessWidget {
                       height: 56,
                       child: CustomButtonWidget(
                         title: '28'.tr,
-                        onPressed: () {},
+                        onPressed: () {
+                          controller.singup();
+                        },
                       ),
                     ),
                     const SizedBox(height: 24),

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/constant/approutes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +23,7 @@ class SignupControllerImp extends SignupController {
 
   @override
   singup() {
-    throw UnimplementedError();
+    Get.offNamed(AppRoutes.checEmailSignup);
   }
 
   @override

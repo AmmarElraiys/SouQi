@@ -1,9 +1,9 @@
 import 'package:ecommerce_app/controller/auth/login_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_button_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_body_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_button_widget.dart';
-import 'package:ecommerce_app/view/widget/auth/custom_text_email_password_widget.dart';
+import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_text_email_password_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_form_field_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/login/custom_logo_shopping_bag_widget.dart';
