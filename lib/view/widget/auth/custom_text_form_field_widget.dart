@@ -38,7 +38,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     super.key,
     required this.hinttext,
     required this.icon,
-    this.validator,
+    required this.validator,
     required this.controller,
   });
 

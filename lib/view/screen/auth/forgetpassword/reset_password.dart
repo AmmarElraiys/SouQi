@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/controller/auth/resetpassword_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
+import 'package:ecommerce_app/core/functions/validinput.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_logo_forgetpass_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_singup_text_form_field_widget.dart';
@@ -27,6 +28,7 @@ class ResetPassword extends StatelessWidget {
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 430),
                 child: Form(
+                  key: controller.formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -43,6 +45,9 @@ class ResetPassword extends StatelessWidget {
 
                       const SizedBox(height: 32),
                       CustomSignupTextFormFieldWidget(
+                        validator: (val) {
+                          return validInput(val!, 8, 100, 'password');
+                        },
                         label: '58'.tr,
                         hint: '59'.tr,
                         icon: Icons.lock_outline_rounded,
@@ -52,6 +57,9 @@ class ResetPassword extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       CustomSignupTextFormFieldWidget(
+                        validator: (val) {
+                          return validInput(val!, 8, 100, 'password');
+                        },
                         label: '26'.tr,
                         hint: '27'.tr,
                         icon: Icons.lock_outline_rounded,

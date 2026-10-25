@@ -16,7 +16,10 @@ class CheckEmailConrtollerImp extends CheckEmailConrtoller {
   late TextEditingController email;
   @override
   goToVerifyCodeSignUp() {
-    Get.toNamed(AppRoutes.verifycodesignup);
+    var formdata = formKey.currentState!;
+    if (formdata.validate()) {
+      Get.toNamed(AppRoutes.verifycodesignup);
+    } else {}
   }
 
   @override

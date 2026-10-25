@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/controller/auth/check_email_Controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
+import 'package:ecommerce_app/core/functions/validinput.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_logo_forgetpass_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_singup_text_form_field_widget.dart';
@@ -44,6 +45,9 @@ class CheckEmail extends StatelessWidget {
                     ),
                     const SizedBox(height: 30),
                     CustomSignupTextFormFieldWidget(
+                      validator: (val) {
+                        return validInput(val!, 7, 30, 'email');
+                      },
                       label: '14'.tr,
                       hint: 'example@email.com',
                       icon: Icons.email_outlined,

@@ -16,11 +16,11 @@ class LoginControllerImp extends LoginController {
   late TextEditingController password;
   @override
   login() {
-    if (formKey.currentState!.validate()) {
+    var formdata = formKey.currentState!;
+    if (formdata.validate()) {
       Get.snackbar('سوقي', 'تم التحقق من البيانات بنجاح');
-
       // أضف عملية تسجيل الدخول الفعلية هنا.
-    }
+    } else {}
   }
 
   @override
