@@ -8,6 +8,7 @@ class CustomSignupTextFormFieldWidget extends StatefulWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final TextInputType keyboardType;
+  final String? Function(String?)? validator;
 
   const CustomSignupTextFormFieldWidget({
     super.key,
@@ -17,6 +18,7 @@ class CustomSignupTextFormFieldWidget extends StatefulWidget {
     required this.obscureText,
     required this.keyboardType,
     required this.controller,
+    required this.validator,
   });
 
   @override
@@ -49,6 +51,7 @@ class _CustomSignupTextFormFieldWidgetState
         ),
         const SizedBox(height: 9),
         TextFormField(
+          validator: widget.validator,
           controller: widget.controller,
           obscureText: _isObscured,
           keyboardType: widget.keyboardType,

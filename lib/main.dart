@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/core/constant/color.dart';
 import 'package:ecommerce_app/core/localization/changelocal.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/services/services.dart';

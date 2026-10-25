@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/controller/auth/signup_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
+import 'package:ecommerce_app/core/functions/validinput.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_body_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_button_widget.dart';
@@ -22,6 +23,7 @@ class Signup extends StatelessWidget {
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
             child: Form(
+              key: controller.formKey,
               child: ConstrainedBox(
                 constraints: const BoxConstraints(maxWidth: 430),
                 child: Column(
@@ -46,6 +48,9 @@ class Signup extends StatelessWidget {
                     CustomTextWidget(title: '22'.tr),
                     const SizedBox(height: 20),
                     CustomSignupTextFormFieldWidget(
+                      validator: (val) {
+                        return validInput(val!, 7, 50, 'username');
+                      },
                       label: '23'.tr,
                       hint: '24'.tr,
                       icon: Icons.person_outline_rounded,
@@ -55,6 +60,9 @@ class Signup extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     CustomSignupTextFormFieldWidget(
+                      validator: (val) {
+                        return validInput(val!, 5, 30, 'email');
+                      },
                       label: '14'.tr,
                       hint: 'example@email.com',
                       icon: Icons.email_outlined,
@@ -64,6 +72,9 @@ class Signup extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     CustomSignupTextFormFieldWidget(
+                      validator: (val) {
+                        return validInput(val!, 10, 30, 'phone');
+                      },
                       label: '34'.tr,
                       hint: '35'.tr,
                       icon: Icons.phone_outlined,
@@ -73,6 +84,9 @@ class Signup extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     CustomSignupTextFormFieldWidget(
+                      validator: (val) {
+                        return validInput(val!, 8, 100, 'password');
+                      },
                       label: '15'.tr,
                       hint: '25'.tr,
                       icon: Icons.lock_outline_rounded,
@@ -82,6 +96,9 @@ class Signup extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     CustomSignupTextFormFieldWidget(
+                      validator: (val) {
+                        return validInput(val!, 8, 100, 'password');
+                      },
                       label: '26'.tr,
                       hint: '27'.tr,
                       icon: Icons.lock_reset_rounded,

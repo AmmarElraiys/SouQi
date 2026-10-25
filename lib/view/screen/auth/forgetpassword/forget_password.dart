@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/controller/auth/forgetpassword_controller.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
+import 'package:ecommerce_app/core/functions/validinput.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_logo_forgetpass_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_singup_text_form_field_widget.dart';
@@ -19,52 +20,60 @@ class ForgetPassword extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.backgroundcolor,
       body: SafeArea(
-        child: Directionality(
-          textDirection: TextDirection.rtl,
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-            child: Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 430),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    const SizedBox(height: 100),
-                    CustomLogoForgetpassWidget(icon: Icons.lock_reset_rounded),
-                    const SizedBox(height: 30),
-                    CustomTextForgerpassWidget(title: '38'.tr),
-                    const SizedBox(height: 14),
-                    Text(
-                      '39'.tr,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
-                        height: 1.8,
-                        color: Colors.black54,
+        child: Form(
+          key: controler.formKey,
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 430),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const SizedBox(height: 100),
+                      CustomLogoForgetpassWidget(
+                        icon: Icons.lock_reset_rounded,
                       ),
-                    ),
-                    const SizedBox(height: 30),
-                    CustomSignupTextFormFieldWidget(
-                      label: '14'.tr,
-                      hint: 'example@email.com',
-                      icon: Icons.email_outlined,
-                      keyboardType: TextInputType.emailAddress,
-                      obscureText: false,
-                      controller: null,
-                    ),
-                    const SizedBox(height: 28),
-                    SizedBox(
-                      height: 56,
-                      child: CustomButtonWidget(
-                        title: '40'.tr,
-                        onPressed: () {
-                          controler.goToverfiycode();
+                      const SizedBox(height: 30),
+                      CustomTextForgerpassWidget(title: '38'.tr),
+                      const SizedBox(height: 14),
+                      Text(
+                        '39'.tr,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 15,
+                          height: 1.8,
+                          color: Colors.black54,
+                        ),
+                      ),
+                      const SizedBox(height: 30),
+                      CustomSignupTextFormFieldWidget(
+                        validator: (val) {
+                          return validInput(val!, 5, 100, 'email');
                         },
+                        label: '14'.tr,
+                        hint: 'example@email.com',
+                        icon: Icons.email_outlined,
+                        keyboardType: TextInputType.emailAddress,
+                        obscureText: false,
+                        controller: null,
                       ),
-                    ),
-                    const SizedBox(height: 20),
-                    CustomTextButtonWidget(title: '41'.tr, onPressed: () {}),
-                  ],
+                      const SizedBox(height: 28),
+                      SizedBox(
+                        height: 56,
+                        child: CustomButtonWidget(
+                          title: '40'.tr,
+                          onPressed: () {
+                            controler.goToverfiycode();
+                          },
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      CustomTextButtonWidget(title: '41'.tr, onPressed: () {}),
+                    ],
+                  ),
                 ),
               ),
             ),

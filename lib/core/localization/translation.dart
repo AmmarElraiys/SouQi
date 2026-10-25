@@ -70,7 +70,13 @@ class MyTranslation extends Translations {
       "58": 'كلمة المرور الجديدة',
       "59": 'أنشئ كلمة مرور قوية',
       "60": 'حفظ كلمة المرور',
-      "61": 'أدخل رمز التحقق الذي أرسلناه إلى بريدك الإلكتروني ',
+      "62": "لا يمكن أن يكون هذا الحقل فارغًا",
+      "63": "اسم المستخدم غير صالح",
+      "64": "البريد الإلكتروني غير صالح",
+      "65": "رقم الهاتف غير صالح",
+      "66": "يجب أن تتكون كلمة المرور من @min أحرف على الأقل",
+      "67": "يجب ألا يقل عدد الأحرف عن @min",
+      "68": "يجب ألا يزيد عدد الأحرف عن @max",
     },
     'en': {
       "1": "Choose your preferred language",
@@ -141,6 +147,13 @@ class MyTranslation extends Translations {
       "59": "Create a strong password",
       "60": "Save Password",
       "61": "Enter the verification code we sent to your email.",
+      "62": "This field cannot be empty",
+      "63": "Invalid username",
+      "64": "Invalid email address",
+      "65": "Invalid phone number",
+      "66": "Password must be at least @min characters long",
+      "67": "Must be at least @min characters",
+      "68": "Must not exceed @max characters",
     },
   };
 }

@@ -14,7 +14,10 @@ class ForgetpasswordControllerImp extends ForgetpasswordController {
   late TextEditingController email;
   @override
   goToverfiycode() {
-    Get.toNamed(AppRoutes.verifyCode);
+    var formdata = formKey.currentState!;
+    if (formdata.validate()) {
+      Get.toNamed(AppRoutes.verifyCode);
+    }
   }
 
   @override
