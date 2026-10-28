@@ -24,7 +24,12 @@ class ResetpasswordControllerImp extends ResetpasswordController {
 
   @override
   goToSuccessResetPassword() {
-    Get.toNamed(AppRoutes.successresetpassword);
+    if (formKey.currentState!.validate()) {
+      Get.snackbar('سوقي', 'تم التحقق من البيانات بنجاح');
+      Get.toNamed(AppRoutes.successresetpassword);
+
+      // أضف عملية تسجيل الدخول الفعلية هنا.
+    }
   }
 
   @override
