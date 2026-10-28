@@ -11,12 +11,13 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-  final formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> formstate = GlobalKey<FormState>();
+
   late TextEditingController email;
   late TextEditingController password;
   @override
   login() {
-    var formdata = formKey.currentState!;
+    var formdata = formstate.currentState!;
     if (formdata.validate()) {
       Get.snackbar('سوقي', 'تم التحقق من البيانات بنجاح');
       // أضف عملية تسجيل الدخول الفعلية هنا.
@@ -25,7 +26,7 @@ class LoginControllerImp extends LoginController {
 
   @override
   goToSignup() {
-    Get.toNamed(AppRoutes.signup);
+    Get.offNamed(AppRoutes.signup);
   }
 
   @override

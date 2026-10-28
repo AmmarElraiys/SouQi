@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/constant/approutes.dart';
+import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/data/datasource/static/static.dart';
 import 'package:ecommerce_app/view/widget/snackbar_app.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ abstract class OnBoardingController extends GetxController {
 
 class OnBoardingControllerImp extends OnBoardingController {
   late PageController pageController;
+  MyServices myServices = Get.find();
   int currentPage = 0;
   @override
   next() {
@@ -27,7 +29,7 @@ class OnBoardingControllerImp extends OnBoardingController {
       );
     } else {
       SnackbarApp.showWelcome();
-
+      myServices.sharedPreferences.setString("onboarding", "1");
       Get.offAllNamed(AppRoutes.login);
     }
   }

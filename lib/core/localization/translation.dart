@@ -70,6 +70,8 @@ class MyTranslation extends Translations {
       "58": 'كلمة المرور الجديدة',
       "59": 'أنشئ كلمة مرور قوية',
       "60": 'حفظ كلمة المرور',
+      "61": 'أدخل رمز التحقق الذي أرسلناه إلى بريدك الإلكتروني ',
+
       "62": "لا يمكن أن يكون هذا الحقل فارغًا",
       "63": "اسم المستخدم غير صالح",
       "64": "البريد الإلكتروني غير صالح",
@@ -77,6 +79,10 @@ class MyTranslation extends Translations {
       "66": "يجب أن تتكون كلمة المرور من @min أحرف على الأقل",
       "67": "يجب ألا يقل عدد الأحرف عن @min",
       "68": "يجب ألا يزيد عدد الأحرف عن @max",
+      "69": "تنبيه",
+      "70": 'هل تريد الخروج من التطبيق؟',
+      "71": 'إلغاء',
+      "72": 'تأكيد',
     },
     'en': {
       "1": "Choose your preferred language",
@@ -154,6 +160,10 @@ class MyTranslation extends Translations {
       "66": "Password must be at least @min characters long",
       "67": "Must be at least @min characters",
       "68": "Must not exceed @max characters",
+      "69": "Alert",
+      "70": "Do you want to exit the app?",
+      "71": "Cancel",
+      "72": "Confirm",
     },
   };
 }

@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/constant/approutes.dart';
-import 'package:ecommerce_app/view/screen/auth/check_email.dart';
+import 'package:ecommerce_app/core/middleware/mymiddleware.dart';
 import 'package:ecommerce_app/view/screen/auth/forgetpassword/forget_password.dart';
 import 'package:ecommerce_app/view/screen/auth/login.dart';
 import 'package:ecommerce_app/view/screen/auth/forgetpassword/reset_password.dart';
@@ -10,18 +10,20 @@ import 'package:ecommerce_app/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:ecommerce_app/view/screen/auth/verifycodesignup.dart';
 import 'package:ecommerce_app/view/screen/language.dart';
 import 'package:ecommerce_app/view/screen/onboarding/onboarding.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-Map<String, Widget Function(BuildContext)> routes = {
-  AppRoutes.login: (context) => const Login(),
-  AppRoutes.language: (context) => const Language(),
-  AppRoutes.onBoarding: (context) => const OnBoarding(),
-  AppRoutes.signup: (context) => const Signup(),
-  AppRoutes.forgetpass: (context) => const ForgetPassword(),
-  AppRoutes.verifyCode: (context) => const Verifycode(),
-  AppRoutes.resetPassword: (context) => const ResetPassword(),
-  AppRoutes.successresetpassword: (context) => const SuccessResetpassword(),
-  AppRoutes.successsignup: (context) => const SuccessSignup(),
-  AppRoutes.checEmailSignup: (context) => const CheckEmail(),
-  AppRoutes.verifycodesignup: (context) => const VerifycodeSignUp(),
-};
+List<GetPage<dynamic>>? routes = [
+  GetPage(name: '/', page: () => Language(), middlewares: [Mymiddleware()]),
+  GetPage(name: AppRoutes.login, page: () => Login()),
+  GetPage(name: AppRoutes.onBoarding, page: () => OnBoarding()),
+  GetPage(name: AppRoutes.signup, page: () => Signup()),
+  GetPage(name: AppRoutes.forgetpass, page: () => ForgetPassword()),
+  GetPage(name: AppRoutes.verifyCode, page: () => Verifycode()),
+  GetPage(name: AppRoutes.resetPassword, page: () => ResetPassword()),
+  GetPage(
+    name: AppRoutes.successresetpassword,
+    page: () => SuccessResetpassword(),
+  ),
+  GetPage(name: AppRoutes.successsignup, page: () => SuccessSignup()),
+  GetPage(name: AppRoutes.verifycodesignup, page: () => VerifycodeSignUp()),
+];

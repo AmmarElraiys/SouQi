@@ -20,15 +20,16 @@ class ResetPassword extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.backgroundcolor,
       body: SafeArea(
-        child: Directionality(
-          textDirection: TextDirection.rtl,
-          child: Center(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(24),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 430),
-                child: Form(
-                  key: controller.formKey,
+        child: Form(
+          key: controller.formKey,
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+            child: Center(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(24),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 430),
+
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
