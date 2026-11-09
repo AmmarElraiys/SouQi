@@ -1,4 +1,7 @@
+import 'package:ecommerce_app/core/class/statusrequest.dart';
 import 'package:ecommerce_app/core/constant/approutes.dart';
+import 'package:ecommerce_app/core/functions/handlingdata.dart';
+import 'package:ecommerce_app/data/datasource/remote/auth/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,17 +19,40 @@ class SignupControllerImp extends SignupController {
   late TextEditingController password;
   late TextEditingController passwordconf;
   final formKey = GlobalKey<FormState>();
-
+  SignUpData signUpData = SignUpData(Get.find());
+  List data = [];
+  StatusRequest? statusRequest;
   @override
   goToSignIn() {
     Get.back();
   }
 
   @override
-  singup() {
+  singup() async {
     var formdata = formKey.currentState!;
     if (formdata.validate()) {
-      Get.offNamed(AppRoutes.verifycodesignup);
+      statusRequest = StatusRequest.loading;
+      update();
+      var response = await signUpData.postData(
+        name.text,
+        email.text,
+        password.text,
+        phone.text,
+      );
+      statusRequest = handlingData(response);
+      if (StatusRequest.success == statusRequest) {
+        if (response['status'] == "success") {
+          // data.addAll(response['data']);
+          Get.offNamed(
+            AppRoutes.verifycodesignup,
+            arguments: {"email": email.text},
+          );
+        } else {
+          Get.defaultDialog(title: "73".tr, middleText: "74".tr);
+          statusRequest = StatusRequest.failure;
+        }
+      }
+      update();
     }
   }
 

@@ -10,10 +10,12 @@ import 'package:ecommerce_app/view/screen/auth/forgetpassword/verifycode.dart';
 import 'package:ecommerce_app/view/screen/auth/verifycodesignup.dart';
 import 'package:ecommerce_app/view/screen/language.dart';
 import 'package:ecommerce_app/view/screen/onboarding/onboarding.dart';
+// import 'package:ecommerce_app/view/screen/test_screen.dart';
 import 'package:get/get.dart';
 
 List<GetPage<dynamic>>? routes = [
   GetPage(name: '/', page: () => Language(), middlewares: [Mymiddleware()]),
+  // GetPage(name: '/', page: () => TestScreen()),
   GetPage(name: AppRoutes.login, page: () => Login()),
   GetPage(name: AppRoutes.onBoarding, page: () => OnBoarding()),
   GetPage(name: AppRoutes.signup, page: () => Signup()),

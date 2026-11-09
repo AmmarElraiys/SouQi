@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/binding.dart';
+import 'package:ecommerce_app/binding/binding.dart';
 import 'package:ecommerce_app/core/localization/changelocal.dart';
 import 'package:ecommerce_app/core/localization/translation.dart';
 import 'package:ecommerce_app/core/services/services.dart';

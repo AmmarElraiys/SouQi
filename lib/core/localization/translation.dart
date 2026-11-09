@@ -83,6 +83,9 @@ class MyTranslation extends Translations {
       "70": 'هل تريد الخروج من التطبيق؟',
       "71": 'إلغاء',
       "72": 'تأكيد',
+      "73": 'تحذير',
+      "74": 'البريد الإلكتروني أو رقم الهاتف موجود بالفعل',
+      "75": 'رمز التحقق غير صحيح، يرجى التأكد وإعادة المحاولة.',
     },
     'en': {
       "1": "Choose your preferred language",
@@ -164,6 +167,9 @@ class MyTranslation extends Translations {
       "70": "Do you want to exit the app?",
       "71": "Cancel",
       "72": "Confirm",
+      "73": "Warning",
+      "74": "Email Or Phone Number Already Exists",
+      "75": "The verification code is incorrect, please check and try again.",
     },
   };
 }
