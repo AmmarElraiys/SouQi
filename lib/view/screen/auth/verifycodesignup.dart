@@ -15,7 +15,9 @@ class VerifycodeSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeSignUpControllerImp controller = VerifyCodeSignUpControllerImp();
+    VerifyCodeSignUpControllerImp controller = Get.put(
+      VerifyCodeSignUpControllerImp(),
+    );
     return Scaffold(
       backgroundColor: AppColor.backgroundcolor,
       body: SafeArea(
@@ -37,7 +39,9 @@ class VerifycodeSignUp extends StatelessWidget {
                     const SizedBox(height: 12),
                     CustomTextWidget(title: '61'.tr),
                     const SizedBox(height: 32),
-                    const CustomTextFormFieldVerifycodeWidget(),
+                    CustomTextFormFieldVerifycodeWidget(
+                      controller: controller.verifysignupcode,
+                    ),
                     const SizedBox(height: 24),
                     SizedBox(
                       height: 54,

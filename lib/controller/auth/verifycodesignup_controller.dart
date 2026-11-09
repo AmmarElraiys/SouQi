@@ -1,4 +1,7 @@
+import 'package:ecommerce_app/core/class/statusrequest.dart';
 import 'package:ecommerce_app/core/constant/approutes.dart';
+import 'package:ecommerce_app/core/functions/handlingdata.dart';
+import 'package:ecommerce_app/data/datasource/remote/auth/verifycodesignup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,10 +14,28 @@ abstract class VerifyCodeSignUpController extends GetxController {
 
 class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   final formKey = GlobalKey<FormState>();
-  late String verifycode;
+  TextEditingController verifysignupcode = TextEditingController();
+  VerifyCodeSignUpData verfycodesignupdata = VerifyCodeSignUpData(Get.find());
+  StatusRequest? statusRequest;
+  String? email;
   @override
-  goToSuccessSignup() {
-    Get.toNamed(AppRoutes.successsignup);
+  goToSuccessSignup() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await verfycodesignupdata.postData(
+      email!,
+      verifysignupcode.text,
+    );
+    statusRequest = handlingData(response);
+    if (StatusRequest.success == statusRequest) {
+      if (response['status'] == "success") {
+        Get.toNamed(AppRoutes.successsignup);
+      } else {
+        Get.defaultDialog(title: "69".tr, middleText: "75".tr);
+        statusRequest = StatusRequest.failure;
+      }
+    }
+    update();
   }
 
   @override
@@ -24,6 +45,8 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
 
   @override
   void onInit() {
+    email = Get.arguments['email'];
+    verifysignupcode = TextEditingController();
     super.onInit();
   }
 }
