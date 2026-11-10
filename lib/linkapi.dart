@@ -4,12 +4,16 @@ class AppLink {
 
   // ========================= Auth =========================
   static const String authserver = "$server/auth";
-  // static const String login = "$authserver/login.php";
+  static const String login = "$authserver/login.php";
   static const String signup = "$authserver/signup.php";
   static const String verifyCodeSignUp = "$authserver/verifycode.php";
-  // static const String forgetPassword = "$authserver/forgetpassword.php";
-  // static const String verifyCode = "$authserver/verifycode.php";
-  // static const String resetPassword = "$authserver/resetpassword.php";
+
+  // ========================= Forget Password =========================
+
+  static const String forgetPasswordServer = "$server/forgetpassword";
+  static const String checkEmail = "$forgetPasswordServer/checkemail.php";
+  static const String verifyCode = "$forgetPasswordServer/verifycode.php";
+  static const String resetPassword = "$forgetPasswordServer/resetpassword.php";
 }
 
 // class AppLink {

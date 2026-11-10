@@ -10,4 +10,5 @@ class AppRoutes {
   static const String successsignup = '/successsignup';
   static const String checEmailSignup = '/checEmailSignup';
   static const String verifycodesignup = '/verifycodesignup';
+  static const String home = '/home';
 }
