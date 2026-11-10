@@ -1,4 +1,7 @@
+import 'package:ecommerce_app/core/class/statusrequest.dart';
 import 'package:ecommerce_app/core/constant/approutes.dart';
+import 'package:ecommerce_app/core/functions/handlingdata.dart';
+import 'package:ecommerce_app/data/datasource/remote/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,15 +16,29 @@ abstract class LoginController extends GetxController {
 class LoginControllerImp extends LoginController {
   final GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
+  StatusRequest? statusRequest;
+  LoginData loginData = LoginData(Get.find());
   late TextEditingController email;
   late TextEditingController password;
   @override
-  login() {
+  login() async {
     var formdata = formstate.currentState!;
     if (formdata.validate()) {
-      Get.snackbar('سوقي', 'تم التحقق من البيانات بنجاح');
-      // أضف عملية تسجيل الدخول الفعلية هنا.
-    } else {}
+      statusRequest = StatusRequest.loading;
+      update();
+      var response = await loginData.postData(email.text, password.text);
+      statusRequest = handlingData(response);
+      if (StatusRequest.success == statusRequest) {
+        if (response['status'] == "success") {
+          // data.addAll(response['data']);
+          Get.offNamed(AppRoutes.home, arguments: {"email": email.text});
+        } else {
+          Get.defaultDialog(title: "73".tr, middleText: "74".tr);
+          statusRequest = StatusRequest.failure;
+        }
+      }
+      update(); // أضف عملية تسجيل الدخول الفعلية هنا.
+    }
   }
 
   @override
