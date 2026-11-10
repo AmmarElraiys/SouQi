@@ -21,7 +21,7 @@ class SignupControllerImp extends SignupController {
   final formKey = GlobalKey<FormState>();
   SignUpData signUpData = SignUpData(Get.find());
   List data = [];
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   @override
   goToSignIn() {
     Get.back();
