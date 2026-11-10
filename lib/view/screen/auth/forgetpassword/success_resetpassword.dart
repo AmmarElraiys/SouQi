@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/controller/auth/success_reset_password_controller.dart';
+import 'package:ecommerce_app/controller/forgetpassword/success_reset_password_controller.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_body_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/custom_text_widget.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';

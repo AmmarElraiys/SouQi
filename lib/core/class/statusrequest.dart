@@ -1,1 +1,8 @@
-enum StatusRequest { loading, success, failure, serverFailure, offlineFailure }
+enum StatusRequest {
+  loading,
+  success,
+  failure,
+  serverFailure,
+  offlineFailure,
+  none,
+}

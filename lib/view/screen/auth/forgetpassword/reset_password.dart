@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/controller/auth/resetpassword_controller.dart';
+import 'package:ecommerce_app/controller/forgetpassword/resetpassword_controller.dart';
+import 'package:ecommerce_app/core/class/handlingdataview.dart';
 import 'package:ecommerce_app/core/constant/color.dart';
 import 'package:ecommerce_app/core/functions/validinput.dart';
 import 'package:ecommerce_app/view/widget/auth/forgetpassword/custom_button_widget.dart';
@@ -14,71 +15,74 @@ class ResetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResetpasswordControllerImp controller = Get.put(
-      ResetpasswordControllerImp(),
-    );
+    Get.put(ResetpasswordControllerImp());
     return Scaffold(
       backgroundColor: AppColor.backgroundcolor,
-      body: SafeArea(
-        child: Form(
-          key: controller.formKey,
-          child: Directionality(
-            textDirection: TextDirection.rtl,
-            child: Center(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(24),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 430),
+      body: GetBuilder<ResetpasswordControllerImp>(
+        builder: (controller) => Handlingdatarequest(
+          statusRequest: controller.statusRequest,
+          widget: SafeArea(
+            child: Form(
+              key: controller.formKey,
+              child: Directionality(
+                textDirection: TextDirection.rtl,
+                child: Center(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(24),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 430),
 
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Center(
-                        child: CustomLogoForgetpassWidget(
-                          icon: Icons.lock_reset_rounded,
-                        ),
-                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Center(
+                            child: CustomLogoForgetpassWidget(
+                              icon: Icons.lock_reset_rounded,
+                            ),
+                          ),
 
-                      const SizedBox(height: 28),
-                      CustomTextBodyWidget(text: '56'.tr),
-                      const SizedBox(height: 12),
-                      CustomTextWidget(title: '57'.tr),
+                          const SizedBox(height: 28),
+                          CustomTextBodyWidget(text: '56'.tr),
+                          const SizedBox(height: 12),
+                          CustomTextWidget(title: '57'.tr),
 
-                      const SizedBox(height: 32),
-                      CustomSignupTextFormFieldWidget(
-                        validator: (val) {
-                          return validInput(val!, 8, 100, 'password');
-                        },
-                        label: '58'.tr,
-                        hint: '59'.tr,
-                        icon: Icons.lock_outline_rounded,
-                        obscureText: true,
-                        keyboardType: TextInputType.text,
-                        controller: null,
+                          const SizedBox(height: 32),
+                          CustomSignupTextFormFieldWidget(
+                            validator: (val) {
+                              return validInput(val!, 8, 100, 'password');
+                            },
+                            label: '58'.tr,
+                            hint: '59'.tr,
+                            icon: Icons.lock_outline_rounded,
+                            obscureText: true,
+                            keyboardType: TextInputType.text,
+                            controller: controller.password,
+                          ),
+                          const SizedBox(height: 20),
+                          CustomSignupTextFormFieldWidget(
+                            validator: (val) {
+                              return validInput(val!, 8, 100, 'password');
+                            },
+                            label: '26'.tr,
+                            hint: '27'.tr,
+                            icon: Icons.lock_outline_rounded,
+                            obscureText: true,
+                            keyboardType: TextInputType.text,
+                            controller: controller.refpassword,
+                          ),
+                          const SizedBox(height: 28),
+                          SizedBox(
+                            height: 54,
+                            child: CustomButtonWidget(
+                              title: '60'.tr,
+                              onPressed: () {
+                                controller.resetPassword();
+                              },
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 20),
-                      CustomSignupTextFormFieldWidget(
-                        validator: (val) {
-                          return validInput(val!, 8, 100, 'password');
-                        },
-                        label: '26'.tr,
-                        hint: '27'.tr,
-                        icon: Icons.lock_outline_rounded,
-                        obscureText: true,
-                        keyboardType: TextInputType.text,
-                        controller: null,
-                      ),
-                      const SizedBox(height: 28),
-                      SizedBox(
-                        height: 54,
-                        child: CustomButtonWidget(
-                          title: '60'.tr,
-                          onPressed: () {
-                            controller.goToSuccessResetPassword();
-                          },
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),

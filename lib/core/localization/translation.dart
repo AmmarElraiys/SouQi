@@ -86,6 +86,13 @@ class MyTranslation extends Translations {
       "73": 'تحذير',
       "74": 'البريد الإلكتروني أو رقم الهاتف موجود بالفعل',
       "75": 'رمز التحقق غير صحيح، يرجى التأكد وإعادة المحاولة.',
+      "76": "معلومات الدخول غير صحيحة او الحساب غير موجود",
+      "77": "معذرا البريد الالكتروني غير موجود",
+      "78": "رمز التحقق غير صحيح، يرجى التحقق وإعادة المحاولة.",
+      "79":
+          "تم تغيير كلمة المرور بنجاح ولكن لم يتم تسجيل الدخول تلقائياً، يرجى تسجيل الدخول يدوياً.",
+      "80": "كلمة المرور غير متطابقة",
+      "81": "حدث خطأ أثناء إعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى.",
     },
     'en': {
       "1": "Choose your preferred language",
@@ -170,6 +177,13 @@ class MyTranslation extends Translations {
       "73": "Warning",
       "74": "Email Or Phone Number Already Exists",
       "75": "The verification code is incorrect, please check and try again.",
+      "76": "Incorrect login information or account does not exist",
+      "77": "Sorry, the email does not exist",
+      "78": "The verification code is incorrect, please check and try again.",
+      "79":
+          "Password changed successfully but not logged in automatically, please log in manually.",
+      "80": "Password does not match",
+      "81": "An error occurred while resetting the password, please try again.",
     },
   };
 }

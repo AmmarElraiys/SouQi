@@ -16,7 +16,7 @@ abstract class LoginController extends GetxController {
 class LoginControllerImp extends LoginController {
   final GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   LoginData loginData = LoginData(Get.find());
   late TextEditingController email;
   late TextEditingController password;
@@ -33,7 +33,7 @@ class LoginControllerImp extends LoginController {
           // data.addAll(response['data']);
           Get.offNamed(AppRoutes.home, arguments: {"email": email.text});
         } else {
-          Get.defaultDialog(title: "73".tr, middleText: "74".tr);
+          Get.defaultDialog(title: "73".tr, middleText: '76'.tr);
           statusRequest = StatusRequest.failure;
         }
       }

@@ -16,7 +16,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
   final formKey = GlobalKey<FormState>();
   TextEditingController verifysignupcode = TextEditingController();
   VerifyCodeSignUpData verfycodesignupdata = VerifyCodeSignUpData(Get.find());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   String? email;
   @override
   goToSuccessSignup() async {
