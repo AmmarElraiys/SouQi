@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/controller/test_controller.dart';
-import 'package:ecommerce_app/core/class/handlingdataview.dart';
 // import 'package:ecommerce_app/core/class/statusrequest.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,17 +12,7 @@ class TestScreen extends StatelessWidget {
     return Scaffold(
       body: GetBuilder<TestController>(
         builder: (controller) {
-          return Handlingdataview(
-            statusRequest: controller.statusRequest,
-            widget: ListView.builder(
-              itemCount: controller.data.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text("${controller.data[index]['users_name']}"),
-                );
-              },
-            ),
-          );
+          return Scaffold(body: Center(child: Text("${controller.username}")));
         },
       ),
     );

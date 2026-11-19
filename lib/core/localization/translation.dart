@@ -93,6 +93,7 @@ class MyTranslation extends Translations {
           "تم تغيير كلمة المرور بنجاح ولكن لم يتم تسجيل الدخول تلقائياً، يرجى تسجيل الدخول يدوياً.",
       "80": "كلمة المرور غير متطابقة",
       "81": "حدث خطأ أثناء إعادة تعيين كلمة المرور، يرجى المحاولة مرة أخرى.",
+      "82": 'عروض حصرية',
     },
     'en': {
       "1": "Choose your preferred language",
@@ -184,6 +185,7 @@ class MyTranslation extends Translations {
           "Password changed successfully but not logged in automatically, please log in manually.",
       "80": "Password does not match",
       "81": "An error occurred while resetting the password, please try again.",
+      "82": "Exclusive offers",
     },
   };
 }
