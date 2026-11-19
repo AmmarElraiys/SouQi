@@ -9,8 +9,12 @@ class Mymiddleware extends GetMiddleware {
   int? get priority => 1;
 
   @override
+  // ignore: body_might_complete_normally_nullable
   RouteSettings? redirect(String? route) {
-    if (myServices.sharedPreferences.getString("onboarding") == "1") {
+    if (myServices.sharedPreferences.getString("step") == "2") {
+      return RouteSettings(name: AppRoutes.home);
+    }
+    if (myServices.sharedPreferences.getString("step") == "1") {
       return RouteSettings(name: AppRoutes.login);
     }
   }

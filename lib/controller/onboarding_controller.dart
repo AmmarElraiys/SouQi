@@ -29,7 +29,7 @@ class OnBoardingControllerImp extends OnBoardingController {
       );
     } else {
       SnackbarApp.showWelcome();
-      myServices.sharedPreferences.setString("onboarding", "1");
+      myServices.sharedPreferences.setString("step", "1");
       Get.offAllNamed(AppRoutes.login);
     }
   }

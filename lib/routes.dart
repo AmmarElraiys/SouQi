@@ -11,6 +11,7 @@ import 'package:ecommerce_app/view/screen/auth/verifycodesignup.dart';
 import 'package:ecommerce_app/view/screen/home.dart';
 import 'package:ecommerce_app/view/screen/language.dart';
 import 'package:ecommerce_app/view/screen/onboarding/onboarding.dart';
+import 'package:ecommerce_app/view/screen/test_screen.dart';
 // import 'package:ecommerce_app/view/screen/test_screen.dart';
 import 'package:get/get.dart';
 
@@ -30,4 +31,5 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoutes.successsignup, page: () => SuccessSignup()),
   GetPage(name: AppRoutes.verifycodesignup, page: () => VerifycodeSignUp()),
   GetPage(name: AppRoutes.home, page: () => Home()),
+  GetPage(name: AppRoutes.test, page: () => TestScreen()),
 ];

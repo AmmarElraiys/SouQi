@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "825808568378",
+    "project_id": "souqi-b2b29",
+    "storage_bucket": "souqi-b2b29.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:825808568378:android:e462bc557cc2d9ee977503",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkgKyPVmiAXnFHkiwKaF6JzScWrYobhBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

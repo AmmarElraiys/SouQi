@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/core/class/statusrequest.dart';
 import 'package:ecommerce_app/core/constant/approutes.dart';
 import 'package:ecommerce_app/core/functions/handlingdata.dart';
+import 'package:ecommerce_app/core/services/services.dart';
 import 'package:ecommerce_app/data/datasource/remote/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,6 +21,7 @@ class LoginControllerImp extends LoginController {
   LoginData loginData = LoginData(Get.find());
   late TextEditingController email;
   late TextEditingController password;
+  MyServices myServices = Get.find();
   @override
   login() async {
     var formdata = formstate.currentState!;
@@ -31,7 +33,25 @@ class LoginControllerImp extends LoginController {
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
           // data.addAll(response['data']);
-          Get.offNamed(AppRoutes.home, arguments: {"email": email.text});
+          myServices.sharedPreferences.setString(
+            "id",
+            response['data']['users_id'].toString(), // أضفنا toString هنا
+          );
+          myServices.sharedPreferences.setString(
+            "username",
+            response['data']['users_name'].toString(),
+          );
+          myServices.sharedPreferences.setString(
+            "email",
+            response['data']['users_email'].toString(),
+          );
+          myServices.sharedPreferences.setString(
+            "phone",
+            response['data']['users_phone'].toString(), // وأيضاً هنا احتياطياً
+          );
+          myServices.sharedPreferences.setString("step", "2");
+
+          Get.offNamed(AppRoutes.home);
         } else {
           Get.defaultDialog(title: "73".tr, middleText: '76'.tr);
           statusRequest = StatusRequest.failure;

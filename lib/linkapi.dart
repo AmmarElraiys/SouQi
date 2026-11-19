@@ -1,7 +1,10 @@
 class AppLink {
   static const String server = "http://10.0.2.2/souqi";
   static const String testServer = "$server/test.php";
-
+  // ========================= Image =========================
+  static const String imagesstatic = "$server/upload";
+  static const String imagesCategories = "$imagesstatic/categories";
+  static const String imagesItems = "$imagesstatic/items";
   // ========================= Auth =========================
   static const String authserver = "$server/auth";
   static const String login = "$authserver/login.php";
@@ -14,6 +17,10 @@ class AppLink {
   static const String checkEmail = "$forgetPasswordServer/checkemail.php";
   static const String verifyCode = "$forgetPasswordServer/verifycode.php";
   static const String resetPassword = "$forgetPasswordServer/resetpassword.php";
+
+  // ========================= Home ======================================
+
+  static const String hmoe = "$server/home.php";
 }
 
 // class AppLink {
